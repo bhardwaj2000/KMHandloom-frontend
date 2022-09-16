@@ -1,0 +1,15 @@
+<div class="container col-3" >
+    <p >Update-orders</p>
+<form [formGroup]="updateItems" (ngSubmit)="updateOrder(kmorder.orderId)">
+    <label >Item Name :</label><br>
+    <input type="text" placeholder="Enter item name" formControlName="item" [(ngModel)]="kmorder.item">
+    <br>
+    <span style="color: red;" *ngIf="item && item.invalid && item.touched">valid Item requied</span><br>
+    <label >Buyer name:</label><br>
+    <input type="text " placeholder="Enter Buyer name" formControlName="buyer" [(ngModel)]="kmorder.buyer">
+    <br>
+    <span style="color: red;" *ngIf="buyer && buyer.invalid && buyer.touched">Buyer name requied</span><br>
+    <button [disabled]="updateItems.invalid">Add order</button>
+
+</form>
+</div>
